@@ -46,22 +46,41 @@ Pages rebuilds automatically, usually under a minute. No other steps.
 All asset paths are relative (`css/style.css`, not `/css/style.css`), so the site works
 locally, under the `/jpdonelson/` subpath, and on a custom domain without changes.
 
-## Adding a custom domain later
+## Adding a custom domain
 
-We own `jdonelson.com`. The likely setup is a subdomain for this site — e.g.
-`jp.jdonelson.com` — leaving the apex free.
+We own `jpdonelson.com`, plus `.store`, `.studio`, and `.info`.
 
-For a subdomain:
+Target is the apex — `jpdonelson.com` — with `www` redirecting to it.
 
-1. At the registrar, add a `CNAME` record: `jp` → `jdonelson04.github.io`
-2. Add a file named `CNAME` at the repo root containing only `jp.jdonelson.com`
-3. GitHub → Settings → Pages → Custom domain → enter it → check **Enforce HTTPS**
+**At the registrar,** for `jpdonelson.com`:
 
-For the apex (`jdonelson.com`) instead, use four `A` records pointing at
-`185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`.
+| Type    | Name  | Value                  |
+|---------|-------|------------------------|
+| A       | `@`   | `185.199.108.153`      |
+| A       | `@`   | `185.199.109.153`      |
+| A       | `@`   | `185.199.110.153`      |
+| A       | `@`   | `185.199.111.153`      |
+| CNAME   | `www` | `jdonelson04.github.io`|
 
-Either way, GitHub issues a free TLS certificate and redirects the old
-`jdonelson04.github.io/jpdonelson/` URL to the new domain. Nothing in the site changes.
+Optionally add four `AAAA` records for IPv6: `2606:50c0:8000::153`, `2606:50c0:8001::153`,
+`2606:50c0:8002::153`, `2606:50c0:8003::153`.
+
+**In this repo:** add a file named `CNAME` at the root containing exactly one line:
+
+```
+jpdonelson.com
+```
+
+**In GitHub:** Settings → Pages → Custom domain → `jpdonelson.com` → Save, then check
+**Enforce HTTPS** once the certificate is issued (can take a few minutes).
+
+GitHub issues a free TLS certificate and redirects the old
+`jdonelson04.github.io/jpdonelson/` URL to the new domain, so nothing already shared breaks.
+DNS changes can take up to 24 hours to propagate, though it is usually much faster.
+
+**The other TLDs.** GitHub Pages serves exactly one custom domain per repository. To make
+`.store`, `.studio`, or `.info` reach the site, set up URL forwarding at the registrar
+pointing each one at `https://jpdonelson.com` — that is a registrar feature, not a GitHub one.
 
 ## Placeholders to replace
 
