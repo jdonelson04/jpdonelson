@@ -1,15 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!--
+    index.html — this is the website. The whole thing is this one file.
+
+    A browser reads this top to bottom and draws what it finds. Text sitting
+    between tags — like <h1>Hello</h1> — is what people actually see. The tags
+    in angle brackets say what that text IS, not what it looks like. The looks
+    all come from css/style.css.
+
+    To see a change: save this file, then refresh the browser tab.
+
+    Anything wrapped in square brackets is a placeholder that still needs replacing.
+  -->
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- <title> is the tab name, and what Google shows as the clickable headline. -->
   <title>[NAME] — Certified Lifeguard for Hire | Austin, TX</title>
+
+  <!-- This description is the gray blurb under the title in search results. -->
   <meta name="description" content="Certified City of Austin lifeguard available for private parties, community pools, and backyard events.">
+
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-  <!-- ============ NAV ============ -->
+  <!-- ============ NAV ============
+       The bar across the top. Each link jumps to a section further down:
+       href="#about" finds the section with id="about". Change one, change both. -->
   <header class="site-header">
     <div class="wrap nav-inner">
       <a class="brand" href="#top">[NAME]</a>
@@ -28,7 +48,10 @@
 
   <main id="top">
 
-    <!-- ============ HERO ============ -->
+    <!-- ============ HERO ============
+         The first thing anyone sees. Name, one line about what he does,
+         and two buttons. Worth the most attention — most visitors read
+         only this before deciding whether to keep scrolling. -->
     <section class="hero">
       <div class="wrap hero-inner">
         <div class="hero-copy">
@@ -50,7 +73,10 @@
       </div>
     </section>
 
-    <!-- ============ ABOUT ============ -->
+    <!-- ============ ABOUT ============
+         A couple of paragraphs. Each <p>...</p> is one paragraph — add another
+         pair of <p> tags for a third. Hitting Enter in this file does nothing;
+         only the tags create paragraph breaks. -->
     <section id="about" class="section">
       <div class="wrap narrow">
         <h2>About</h2>
@@ -67,7 +93,10 @@
       </div>
     </section>
 
-    <!-- ============ CERTIFICATIONS ============ -->
+    <!-- ============ CERTIFICATIONS ============
+         Four cards. Each <li class="cert-card"> ... </li> is one card.
+         To add a fifth, copy an entire <li> block and edit the text inside.
+         To remove one, delete the whole block from <li> to </li>. -->
     <section id="certifications" class="section section-alt">
       <div class="wrap">
         <h2>Certifications &amp; Training</h2>
@@ -103,7 +132,9 @@
       </div>
     </section>
 
-    <!-- ============ SERVICES & AVAILABILITY ============ -->
+    <!-- ============ SERVICES & AVAILABILITY ============
+         Two columns: what he'll do on the left, when he's free on the right.
+         Each <li> is one bullet point. -->
     <section id="services" class="section">
       <div class="wrap">
         <h2>Services &amp; Availability</h2>
@@ -129,7 +160,13 @@
       </div>
     </section>
 
-    <!-- ============ GALLERY ============ -->
+    <!-- ============ GALLERY ============
+         Six photos. Right now they're placeholder .svg files in the images/ folder.
+         Drop real photos into images/ and change each src="..." to the new filename.
+         If the new file is a .jpg, the src has to say .jpg — the name must match exactly.
+
+         The alt="..." text describes the photo for people using screen readers,
+         and shows up if the image ever fails to load. Worth writing real ones. -->
     <section id="gallery" class="section section-alt">
       <div class="wrap">
         <h2>Gallery</h2>
@@ -144,7 +181,10 @@
       </div>
     </section>
 
-    <!-- ============ TESTIMONIALS ============ -->
+    <!-- ============ TESTIMONIALS ============
+         Three short quotes from parents. Each <blockquote> ... </blockquote> is one.
+         Only have two? Delete one entire blockquote block — the rest will re-space
+         themselves automatically. -->
     <section id="testimonials" class="section">
       <div class="wrap">
         <div class="quotes">
@@ -164,7 +204,17 @@
       </div>
     </section>
 
-    <!-- ============ CONTACT ============ -->
+    <!-- ============ CONTACT ============
+         Three links. mailto: opens the visitor's email app, tel: dials on a phone.
+
+         HEADS UP — each link has the address in TWO places: once in href="..."
+         (where the link actually goes) and once as the visible text on screen.
+         Change both, or the page will show one address and send people to another.
+         That's the single easiest mistake to make on this page.
+
+         [PHONE-E164] is the dialing format: no spaces or dashes, country code
+         first — like +15125550123. [PHONE] is how it's displayed, so it can be
+         written normally, like (512) 555-0123. -->
     <section id="contact" class="section section-dark">
       <div class="wrap narrow center">
         <h2>Get in touch</h2>
@@ -190,6 +240,8 @@
 
   </main>
 
+  <!-- ============ FOOTER ============
+       The year fills itself in automatically — that's what js/main.js does. -->
   <footer class="site-footer">
     <div class="wrap">
       <p>&copy; <span id="year">2026</span> [NAME] · Austin, TX</p>
