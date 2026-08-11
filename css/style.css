@@ -120,8 +120,9 @@ a { color: var(--water); }
 .section { padding: 76px 0; }
 .section-alt { background: var(--sand); }
 .section-dark { background: var(--deep); color: var(--foam); }
-.section-dark h2 { color: var(--white); }
 .section h2 { color: var(--deep); }
+/* Must follow `.section h2` — equal specificity, so source order decides. */
+.section-dark h2 { color: var(--white); }
 .section-lede { color: var(--muted); max-width: 60ch; margin-bottom: 36px; }
 .section-dark .section-lede { color: rgba(232,244,250,.75); margin-inline: auto; }
 .note { font-size: .9rem; color: var(--muted); }
