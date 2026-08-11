@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="660" viewBox="0 0 880 660" role="img" aria-label="Hero photo">
+  <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0%" stop-color="#0b3a53"/><stop offset="100%" stop-color="#1179a8"/>
+  </linearGradient></defs>
+  <rect width="880" height="660" fill="url(#g)"/>
+  <g fill="none" stroke="#ffffff" stroke-opacity="0.18" stroke-width="3">
+    <path d="M0 475 q 110 -22 220 0 t 220 0 t 220 0 t 220 0"/>
+    <path d="M0 528 q 110 22 220 0 t 220 0 t 220 0 t 220 0"/>
+    <path d="M0 580 q 110 -18 220 0 t 220 0 t 220 0 t 220 0"/>
+  </g>
+  <text x="50%" y="46%" text-anchor="middle" fill="#ffffff" fill-opacity="0.85"
+        font-family="system-ui, sans-serif" font-size="40" font-weight="600">Hero photo</text>
+  <text x="50%" y="56%" text-anchor="middle" fill="#ffffff" fill-opacity="0.5"
+        font-family="system-ui, sans-serif" font-size="22">880 × 660 placeholder</text>
+</svg>
